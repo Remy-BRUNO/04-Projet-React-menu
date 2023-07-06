@@ -3,17 +3,15 @@ import Categories from "./Categories"
 import Menu from "./Menu"
 import { useEffect, useState } from "react"
 import menu from "./data"
+
+// tableau de categories
+const tempSet = new Set(menu.map((food) => food.category))
+const tempCatagory = ["all", ...tempSet]
+
 function App() {
   const [foods, setFoods] = useState(menu)
-  const [category, setCategory] = useState([])
+  const [category, setCategory] = useState(tempCatagory)
 
-  // categories
-
-  useEffect(() => {
-    const tempSet = new Set(foods.map((food) => food.category))
-    const tempCatagory = ["all", ...tempSet]
-    setCategory(tempCatagory)
-  }, [])
   const handleFilter = (cat) => {
     cat === "all"
       ? setFoods(menu)
