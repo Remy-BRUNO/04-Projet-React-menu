@@ -1,7 +1,7 @@
 import Title from "./Title"
 import Categories from "./Categories"
 import Menu from "./Menu"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import menu from "./data"
 
 // tableau de categories
